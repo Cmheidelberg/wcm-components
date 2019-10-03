@@ -1,0 +1,38 @@
+name: hand
+version: '1'
+schemaVersion: 0.0.1
+wings:
+  inputs:
+  - role: stream-threshold
+    prefix: -p1
+    isParam: true
+    type: http://www.w3.org/2001/XMLSchema#integer
+    dimensionality: 0
+    paramDefaultValue: 100
+  - role: input-dem
+    prefix: -i1
+    isParam: false
+    type: dcdom:raster-dem
+    dimensionality: 0
+  outputs:
+  - role: distance-down
+    prefix: -o1
+    isParam: false
+    type: dcdom:raster-distancedown
+    dimensionality: 0
+  rules: []
+  inheritedRules: []
+  documentation: hyd Model
+  requirement:
+    storageGB: 0.0
+    memoryGB: 0.0
+    need64bit: false
+    softwareIds: []
+  componentType: Hydrological
+  files:
+  - src\*
+  data:
+    raster-dem:
+      files: []
+    raster-distancedown:
+      files: []

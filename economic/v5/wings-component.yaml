@@ -1,0 +1,87 @@
+name: economictest
+version: v5
+schemaVersion: 0.0.1
+wings:
+  inputs:
+  - role: cycles-data
+    prefix: -i1
+    isParam: false
+    type: dcdom:economic-cycles-data
+    dimensionality: 0
+  - role: land-input
+    prefix: -i2
+    isParam: false
+    type: dcdom:economic-land-input
+    dimensionality: 0
+  - role: supply-elasticity
+    prefix: -i3
+    isParam: false
+    type: dcdom:economic-supply-elasticity
+    dimensionality: 0
+  - role: price
+    prefix: -i4
+    isParam: false
+    type: dcdom:economic-price
+    dimensionality: 0
+  - role: production-cost
+    prefix: -i5
+    isParam: false
+    type: dcdom:economic-production-cost
+    dimensionality: 0
+  - role: crop-price-adjustment
+    prefix: -p1
+    isParam: true
+    type: http://www.w3.org/2001/XMLSchema#integer
+    dimensionality: 0
+    paramDefaultValue: 0
+  - role: land-cost-adjustment
+    prefix: -p2
+    isParam: true
+    type: http://www.w3.org/2001/XMLSchema#integer
+    dimensionality: 0
+    paramDefaultValue: 0
+  - role: fertilizer-cost-adjustment
+    prefix: -p3
+    isParam: true
+    type: http://www.w3.org/2001/XMLSchema#integer
+    dimensionality: 0
+    paramDefaultValue: 0
+  outputs:
+  - role: economic-land-use
+    prefix: -o1
+    isParam: false
+    type: dcdom:EconomicLandUse
+    dimensionality: 0
+  rules:
+  - '[ economicAdjustments: (?c rdf:type acdom:EconomicClass) (?c ac:hasInput ?cpa)
+    (?cpa ac:hasArgumentID ''crop-price-adjustment'') (?c ac:hasInput ?lca) (?lca
+    ac:hasArgumentID ''land-cost-adjustment'') (?c ac:hasInput ?fca) (?fca ac:hasArgumentID
+    ''fertilizer-cost-adjustment'') (?c ac:hasOutput ?op) (?op ac:hasArgumentID ''economic-land-use'')
+    (?cpa ac:hasValue ?cpav) (?lca ac:hasValue ?lcav) (?fca ac:hasValue ?fcav) strConcat(''cpa_''
+    ?cpav ''_lca_'' ?lcav ''_fca_'' ?fcav ?combined) md5hash(?combined ?md5hash) ->
+    print(?cpav ?lcav ?fcav ?combined ?md5hash) (?op dcdom:crop-price-adjustment ?cpav)
+    (?op dcdom:land-cost-adjustment ?lcav) (?op dcdom:fertilizer-cost-adjustment ?fcav)
+    (?op dcdom:combined-adjustment-suffix ?md5hash) ]'
+  inheritedRules: []
+  documentation: Economic Model
+  requirement:
+    storageGB: 0.0
+    memoryGB: 0.0
+    need64bit: false
+    softwareIds: []
+  componentType: Economic
+  files:
+  - src\*
+  data:
+    economic-cycles-data:
+      files: []
+    economic-land-input:
+      files: []
+    economic-supply-elasticity:
+      files: []
+    economic-price:
+      files: []
+    economic-production-cost:
+      files: []
+    EconomicLandUse:
+      files: []
