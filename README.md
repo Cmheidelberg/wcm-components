@@ -1,9 +1,9 @@
-# wcm-components
+## wcm-components
 This is a repository for storing WCM components and their versions.
 
 The file structure should be a folder for each component with the zipped versions of each component inside
 
-Example:
+**GitHub directory structure example:**
 ```
 .
 ├── HAND                            # Component name
@@ -17,7 +17,7 @@ Example:
 
 The zip file needs to contain everything a component has when downloaded from wings: The wings-component.yaml, src folder and data folder. The yaml should also be properly configured before it is uploaded onto GitHub. 
 
-Example of file structure for zip:
+**File structure for zip example**:
 ```
 └── Economic                   
     ├── wings-component.yaml               
