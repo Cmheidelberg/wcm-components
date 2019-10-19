@@ -6,13 +6,13 @@ The file structure should be a folder for each component with the zipped version
 Example:
 ```
 .
-├── HAND                     # Component name
+├── HAND                            # Component name
 │   └── v1.zip
 │
 ├── Economic                   
-│   ├── v6.zip               # zip file contains zipped component
+│   ├── v6.zip                      # zip file contains zipped component
 │   ├── v5.zip               
-│   └── unstable_version.zip         # Versions dont HAVE to be numbers
+│   └── unstable_version.zip        # Versions dont HAVE to be numbers
 ```
 
 The zip file needs to contain everything a component has when downloaded from wings: The wings-component.yaml, src folder and data folder. The yaml should also be properly configured before it is uploaded onto GitHub. 
