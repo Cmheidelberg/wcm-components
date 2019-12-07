@@ -1,7 +1,7 @@
 ## wcm-components
 This is a repository for storing WCM components and their versions.
 
-The file structure should be a folder for each component with the zipped versions of each component inside
+The file structure should be as follows: Each component will have a seperate folder with each different version of the component will be stored as zip file inside the component's folder. An example of the file structure can be seen below 
 
 **GitHub directory structure example:**
 ```
@@ -10,7 +10,7 @@ The file structure should be a folder for each component with the zipped version
 │   └── v1.zip
 │
 ├── Economic                   
-│   ├── v6.zip                      # zip file contains zipped component
+│   ├── v6.zip                      # zip file contains the component
 │   ├── v5.zip               
 │   └── unstable_version.zip        # Versions dont HAVE to be numbers
 ```
