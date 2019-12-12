@@ -29,3 +29,5 @@ The zip file needs to contain everything a component has when downloaded from wi
 ```
 
 The `wings-component.yaml` is the YAML spec. declaring I/O. The "data" folder has `data` files to be used as input (optional). The `src` file contains the run file and the support scripts necessary to make the component work. A `Dockerfile` (optional) will include the description to build a docker image.
+
+test
