@@ -19,7 +19,7 @@ The zip file needs to contain everything a component has when downloaded from wi
 
 **File structure for zip example**:
 ```
-└── Economic                   
+└── Economic-v6                   
     ├── wings-component.yaml               
     ├── src   
     |    ├── run.sh
